@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TerrainDefs>
+  <ActiveTerrain.SpecialTerrain>
+    <defName>TestTerrain</defName>
+    <label>Lava floor</label>
+	<description>The floor is lava!</description>
+    <texturePath>Terrain/Surfaces/BrokenAsphalt</texturePath>
+	<terrainInstanceClass>ActiveTerrain.TerrainInstance</terrainInstanceClass>
+    <layerable>true</layerable>
+    <EdgeType>Hard</EdgeType>
+    <RenderPrecedence>370</RenderPrecedence>
+    <PathCost>0</PathCost>
+    <resourcesFractionWhenDeconstructed>0</resourcesFractionWhenDeconstructed>
+    <statBases>
+      <WorkToBuild>1100</WorkToBuild>
+      <Beauty>-1</Beauty>
+      <Cleanliness>-1</Cleanliness>
+    </statBases>
+    <ScatterType>Rocky</ScatterType>
+    <affordances>
+      <li>Light</li>
+      <li>Heavy</li>
+    </affordances>
+    <Fertility>0.0</Fertility>
+    <costList>
+      <Steel>10</Steel>
+    </costList>
+    <designationCategory>Floors</designationCategory>
+	<terrainComps>
+		<li Class="ActiveTerrain.TerrainCompProperties_HeatPush">
+			<pushAmount>1000</pushAmount>
+		</li>
+	</terrainComps>
+  </ActiveTerrain.SpecialTerrain>
+  <ActiveTerrain.SpecialTerrain>
+    <defName>PowerFloorHeated</defName>
+    <label>wood floor (heated)</label>
+    <texturePath>WoodHeatedFloor</texturePath>
+	<description>Pretty, heated floors to keep your room toasty, and to melt snow outside. Default target temperature is 21C(70F), but floors will automatically conform to the first heater in the room. Consumes 40W power when active and 10W when idle.</description>
+	<terrainInstanceClass>ActiveTerrain.TerrainInstance</terrainInstanceClass>
+    <layerable>true</layerable>
+    <EdgeType>Hard</EdgeType>
+    <RenderPrecedence>370</RenderPrecedence>
+    <PathCost>0</PathCost>
+    <statBases>
+      <WorkToBuild>1100</WorkToBuild>
+      <Beauty>1</Beauty>
+    </statBases>
+    <affordances>
+      <li>Light</li>
+      <li>Heavy</li>
+    </affordances>
+    <Fertility>0.0</Fertility>
+    <costList>
+      <Steel>7</Steel>
+	  <Component>1</Component>
+    </costList>
+    <designationCategory>Floors</designationCategory>
+	<terrainComps>
+		<li Class="ActiveTerrain.TerrainCompProperties_PowerTrader">
+			<basePowerConsumption>20</basePowerConsumption>
+		</li>
+		<li Class="ActiveTerrain.TerrainCompProperties_TempControl">
+			<energyPerSecond>12</energyPerSecond>
+			<reliesOnPower>true</reliesOnPower>
+			<lowPowerConsumptionFactor>0.25</lowPowerConsumptionFactor>
+			<cleansSnow>true</cleansSnow>
+			<snowMeltAmountPerSecond>0.01</snowMeltAmountPerSecond>
+		</li>
+	</terrainComps>
+  </ActiveTerrain.SpecialTerrain>
+  <ActiveTerrain.SpecialTerrain>
+    <defName>ForeverCleanFloor</defName>
+    <label>ForeverClean(tm)</label>
+    <texturePath>Terrain/Surfaces/Sand</texturePath>
+	<description>A floor that actively cleans all blood, grime, vomit etc. in its cell. Perfect for futuristic hospitals. Note: It does not clean snow. Consumes 40W power.</description>
+	<terrainInstanceClass>ActiveTerrain.TerrainInstance</terrainInstanceClass>
+    <layerable>true</layerable>
+    <EdgeType>Hard</EdgeType>
+    <RenderPrecedence>370</RenderPrecedence>
+    <PathCost>0</PathCost>
+    <statBases>
+      <WorkToBuild>5000</WorkToBuild>
+      <Beauty>1</Beauty>
+      <Cleanliness>1.2</Cleanliness>
+    </statBases>
+    <affordances>
+      <li>Light</li>
+      <li>Heavy</li>
+    </affordances>
+    <Fertility>0.0</Fertility>
+    <costList>
+      <Steel>10</Steel>
+	  <Silver>50</Silver>
+    </costList>
+    <designationCategory>Floors</designationCategory>
+	<terrainComps>
+		<li Class="ActiveTerrain.TerrainCompProperties_SelfClean">
+		  <compClass>ActiveTerrain.TerrainComp_SelfCleanPowered</compClass>
+		</li>
+		<li Class="ActiveTerrain.TerrainCompProperties_PowerTrader">
+			<basePowerConsumption>20</basePowerConsumption>
+		</li>
+	</terrainComps>
+  </ActiveTerrain.SpecialTerrain>
+  <ActiveTerrain.SpecialTerrain>
+    <defName>FloorGlowing</defName>
+    <label>glow floor</label>
+    <texturePath>Terrain/Surfaces/Sand</texturePath>
+	<description>Floors that glow. Here's the good bit - You can actually put buildings on it. Consumes 5W power.</description>
+	<terrainInstanceClass>ActiveTerrain.TerrainInstance</terrainInstanceClass>
+    <layerable>true</layerable>
+    <EdgeType>Hard</EdgeType>
+    <RenderPrecedence>370</RenderPrecedence>
+    <PathCost>0</PathCost>
+    <statBases>
+      <WorkToBuild>1100</WorkToBuild>
+      <Beauty>-1</Beauty>
+      <Cleanliness>-1</Cleanliness>
+    </statBases>
+    <affordances>
+      <li>Light</li>
+      <li>Heavy</li>
+    </affordances>
+    <Fertility>0.0</Fertility>
+    <costList>
+      <Steel>9</Steel>
+    </costList>
+    <designationCategory>Floors</designationCategory>
+	<terrainComps>
+		<li Class="ActiveTerrain.TerrainCompProperties_PowerTrader">
+			<basePowerConsumption>5</basePowerConsumption>
+		</li>
+		<li Class="ActiveTerrain.TerrainCompProperties_Glower">
+		  <overlightRadius>0</overlightRadius>
+		  <glowRadius>5</glowRadius>
+		  <powered>true</powered>
+		</li>
+	</terrainComps>
+  </ActiveTerrain.SpecialTerrain>
+</TerrainDefs>
