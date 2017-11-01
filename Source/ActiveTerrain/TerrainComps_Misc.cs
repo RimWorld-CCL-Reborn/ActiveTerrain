@@ -145,7 +145,6 @@ namespace ActiveTerrain
                     parentTempControl = null;
                     return parentTempControl;
                 }
-
                 var room = parent.Position.GetRoom(parent.Map);
                 if (room == null) return null;
 

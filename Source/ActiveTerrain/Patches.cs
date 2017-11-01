@@ -59,12 +59,12 @@ namespace ActiveTerrain
             foreach (var instr in original)
             {
                 if (instr.opcode == OpCodes.Ldfld && instr.operand == typeof(MouseoverReadout).GetField("cachedTerrain", BindingFlags.Instance | BindingFlags.NonPublic))
-                //Basically enables another check for isinst at IL_0196: ldfld class Verse.TerrainDef Verse.MouseoverReadout::cachedTerrain.
+                //Basically enables another check for isinst at ldfld class Verse.TerrainDef Verse.MouseoverReadout::cachedTerrain.
                 {
                     yield return instr;
                     yield return new CodeInstruction(OpCodes.Ceq);//Returns true if original value was equal to cache
 
-                    yield return new CodeInstruction(OpCodes.Ldloc_S, 4);
+                    yield return new CodeInstruction(OpCodes.Ldloc_S, 10);// local of TerrainDef
                     yield return new CodeInstruction(OpCodes.Isinst, typeof(SpecialTerrain));//Returns null reference if not of instance
                     yield return new CodeInstruction(OpCodes.Ldnull);
                     yield return new CodeInstruction(OpCodes.Ceq);//Returns true if terrain isn't of type SpecialTerrain

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Conduits>
+<Defs>
   <ThingDef ParentName="BuildingBase">
     <defName>PowerConduitFloor</defName>
     <label>power conduit (floor connecting)</label>
@@ -23,7 +23,6 @@
     <building>
 	  <ai_chillDestination>false</ai_chillDestination>
 	  <isInert>true</isInert>
-      <ignoreNeedsPower>true</ignoreNeedsPower>
       <isEdifice>false</isEdifice>
     </building>
     <altitudeLayer>FloorEmplacement</altitudeLayer>
@@ -63,4 +62,4 @@
       <li>Electricity</li>
     </researchPrerequisites>
   </ThingDef>
-</Conduits>
+</Defs>

@@ -1,27 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<TerrainDefs>
+<Defs>
   <ActiveTerrain.SpecialTerrain>
     <defName>TestTerrain</defName>
     <label>Lava floor</label>
 	<description>The floor is lava!</description>
-    <texturePath>Terrain/Surfaces/BrokenAsphalt</texturePath>
+	<texturePath>Terrain/Lava3</texturePath>
 	<terrainInstanceClass>ActiveTerrain.TerrainInstance</terrainInstanceClass>
     <layerable>true</layerable>
-    <EdgeType>Hard</EdgeType>
-    <RenderPrecedence>370</RenderPrecedence>
-    <PathCost>0</PathCost>
+    <edgeType>Hard</edgeType>
+    <renderPrecedence>370</renderPrecedence>
+    <pathCost>0</pathCost>
     <resourcesFractionWhenDeconstructed>0</resourcesFractionWhenDeconstructed>
     <statBases>
       <WorkToBuild>1100</WorkToBuild>
       <Beauty>-1</Beauty>
       <Cleanliness>-1</Cleanliness>
     </statBases>
-    <ScatterType>Rocky</ScatterType>
+    <scatterType>Rocky</scatterType>
     <affordances>
       <li>Light</li>
       <li>Heavy</li>
     </affordances>
-    <Fertility>0.0</Fertility>
+    <fertility>0.0</fertility>
     <costList>
       <Steel>10</Steel>
     </costList>
@@ -33,15 +33,15 @@
 	</terrainComps>
   </ActiveTerrain.SpecialTerrain>
   <ActiveTerrain.SpecialTerrain>
-    <defName>PowerFloorHeated</defName>
-    <label>wood floor (heated)</label>
-    <texturePath>WoodHeatedFloor</texturePath>
-	<description>Pretty, heated floors to keep your room toasty, and to melt snow outside. Default target temperature is 21C(70F), but floors will automatically conform to the first heater in the room. Consumes 40W power when active and 10W when idle.</description>
+    <defName>MetalFloorHeated</defName>
+    <label>metal tile (heated)</label>
+    <texturePath>Terrain/HeatedTile</texturePath>
+	<description>Industrial-grade heaters to heat up rooms and to melt snow outside. Default target temperature is 21C(70F), but floors will automatically conform to the first heater in the room. Consumes 40W power when active and 10W when idle.</description>
 	<terrainInstanceClass>ActiveTerrain.TerrainInstance</terrainInstanceClass>
     <layerable>true</layerable>
-    <EdgeType>Hard</EdgeType>
-    <RenderPrecedence>370</RenderPrecedence>
-    <PathCost>0</PathCost>
+    <edgeType>Hard</edgeType>
+    <renderPrecedence>370</renderPrecedence>
+    <pathCost>0</pathCost>
     <statBases>
       <WorkToBuild>1100</WorkToBuild>
       <Beauty>1</Beauty>
@@ -50,9 +50,46 @@
       <li>Light</li>
       <li>Heavy</li>
     </affordances>
-    <Fertility>0.0</Fertility>
+    <fertility>0.0</fertility>
     <costList>
       <Steel>7</Steel>
+	  <Component>1</Component>
+    </costList>
+    <designationCategory>Floors</designationCategory>
+	<terrainComps>
+		<li Class="ActiveTerrain.TerrainCompProperties_PowerTrader">
+			<basePowerConsumption>40</basePowerConsumption>
+		</li>
+		<li Class="ActiveTerrain.TerrainCompProperties_TempControl">
+			<energyPerSecond>24</energyPerSecond>
+			<reliesOnPower>true</reliesOnPower>
+			<lowPowerConsumptionFactor>0.25</lowPowerConsumptionFactor>
+			<cleansSnow>true</cleansSnow>
+			<snowMeltAmountPerSecond>0.01</snowMeltAmountPerSecond>
+		</li>
+	</terrainComps>
+  </ActiveTerrain.SpecialTerrain>
+  <ActiveTerrain.SpecialTerrain>
+    <defName>WoodFloorHeated</defName>
+    <label>wood floor (heated)</label>
+    <texturePath>Terrain/WoodHeatedFloor</texturePath>
+	<description>Pretty, heated floors to keep your room toasty, and to melt snow outside. Default target temperature is 21C(70F), but floors will automatically conform to the first heater in the room. Consumes 40W power when active and 10W when idle.</description>
+	<terrainInstanceClass>ActiveTerrain.TerrainInstance</terrainInstanceClass>
+    <layerable>true</layerable>
+    <edgeType>Hard</edgeType>
+    <renderPrecedence>370</renderPrecedence>
+    <pathCost>0</pathCost>
+    <statBases>
+      <WorkToBuild>1100</WorkToBuild>
+      <Beauty>1</Beauty>
+    </statBases>
+    <affordances>
+      <li>Light</li>
+      <li>Heavy</li>
+    </affordances>
+    <fertility>0.0</fertility>
+    <costList>
+      <WoodLog>7</WoodLog>
 	  <Component>1</Component>
     </costList>
     <designationCategory>Floors</designationCategory>
@@ -70,15 +107,15 @@
 	</terrainComps>
   </ActiveTerrain.SpecialTerrain>
   <ActiveTerrain.SpecialTerrain>
-    <defName>ForeverCleanFloor</defName>
+    <defName>ForeverCleanTile</defName>
     <label>ForeverClean(tm)</label>
-    <texturePath>Terrain/Surfaces/Sand</texturePath>
+    <texturePath>Terrain/ForeverCleanTile</texturePath>
 	<description>A floor that actively cleans all blood, grime, vomit etc. in its cell. Perfect for futuristic hospitals. Note: It does not clean snow. Consumes 40W power.</description>
 	<terrainInstanceClass>ActiveTerrain.TerrainInstance</terrainInstanceClass>
     <layerable>true</layerable>
-    <EdgeType>Hard</EdgeType>
-    <RenderPrecedence>370</RenderPrecedence>
-    <PathCost>0</PathCost>
+    <edgeType>Hard</edgeType>
+    <renderPrecedence>370</renderPrecedence>
+    <pathCost>0</pathCost>
     <statBases>
       <WorkToBuild>5000</WorkToBuild>
       <Beauty>1</Beauty>
@@ -88,7 +125,7 @@
       <li>Light</li>
       <li>Heavy</li>
     </affordances>
-    <Fertility>0.0</Fertility>
+    <fertility>0.0</fertility>
     <costList>
       <Steel>10</Steel>
 	  <Silver>50</Silver>
@@ -110,9 +147,9 @@
 	<description>Floors that glow. Here's the good bit - You can actually put buildings on it. Consumes 5W power.</description>
 	<terrainInstanceClass>ActiveTerrain.TerrainInstance</terrainInstanceClass>
     <layerable>true</layerable>
-    <EdgeType>Hard</EdgeType>
-    <RenderPrecedence>370</RenderPrecedence>
-    <PathCost>0</PathCost>
+    <edgeType>Hard</edgeType>
+    <renderPrecedence>370</renderPrecedence>
+    <pathCost>0</pathCost>
     <statBases>
       <WorkToBuild>1100</WorkToBuild>
       <Beauty>-1</Beauty>
@@ -122,7 +159,7 @@
       <li>Light</li>
       <li>Heavy</li>
     </affordances>
-    <Fertility>0.0</Fertility>
+    <fertility>0.0</fertility>
     <costList>
       <Steel>9</Steel>
     </costList>
@@ -138,4 +175,4 @@
 		</li>
 	</terrainComps>
   </ActiveTerrain.SpecialTerrain>
-</TerrainDefs>
+</Defs>
