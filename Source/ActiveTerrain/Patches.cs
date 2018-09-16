@@ -77,7 +77,7 @@ namespace ActiveTerrain
                 {
                     //Remember - TerrainDef was originally on the stack
                     yield return new CodeInstruction(OpCodes.Ldloc_0);//Cell
-                    yield return new CodeInstruction(OpCodes.Call, typeof(Find).GetMethod("get_VisibleMap"));//Map
+                    yield return new CodeInstruction(OpCodes.Call, typeof(Find).GetMethod("get_CurrentMap"));//Map
                     yield return new CodeInstruction(OpCodes.Call, typeof(_MouseoverReadout).GetMethod(nameof(HandleLabelQuery)));
                     patchedCodeBlock2 = true;
                 }

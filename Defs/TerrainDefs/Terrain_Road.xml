@@ -53,7 +53,7 @@
     <fertility>0.0</fertility>
     <costList>
       <Steel>7</Steel>
-	  <Component>1</Component>
+	  <ComponentIndustrial>1</ComponentIndustrial>
     </costList>
     <designationCategory>Floors</designationCategory>
 	<terrainComps>
@@ -90,7 +90,7 @@
     <fertility>0.0</fertility>
     <costList>
       <WoodLog>7</WoodLog>
-	  <Component>1</Component>
+	  <ComponentIndustrial>1</ComponentIndustrial>
     </costList>
     <designationCategory>Floors</designationCategory>
 	<terrainComps>
